@@ -1,8 +1,8 @@
 package open
 
 import (
-	"fmt"
-	"syscall"
+// 	"fmt"
+// 	"syscall"
 )
 
 // see: https://github.com/torvalds/linux/blob/master/arch/alpha/include/uapi/asm/ioctl.h
@@ -85,9 +85,10 @@ func IOC_SIZE(nr uintptr) uintptr {
 }
 
 func IOCTL(fd, name, data uintptr) error {
-	_, _, ep := syscall.Syscall(syscall.SYS_IOCTL, fd, name, data)
-	if ep != 0 {
-		return fmt.Errorf("syscall err: (%#02x) %s", uint8(ep), syscall.Errno(ep))
-	}
+	//windows不支持，暂时注释掉syscall.Syscall
+// 	_, _, ep := syscall.Syscall(syscall.SYS_IOCTL, fd, name, data)
+// 	if ep != 0 {
+// 		return fmt.Errorf("syscall err: (%#02x) %s", uint8(ep), syscall.Errno(ep))
+// 	}
 	return nil
 }
