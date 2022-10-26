@@ -7,7 +7,7 @@ go-ipmi is a pure golang native IPMI library. It DOES NOT wraps `ipmitool`.
 ```go
 import (
 	"fmt"
-	"github.com/bougou/go-ipmi"
+	"github.com/gophernancy/go-ipmi"
 )
 
 func main() {
